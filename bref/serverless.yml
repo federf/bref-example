@@ -1,0 +1,39 @@
+service: app
+
+provider:
+    name: aws
+    region: us-east-1
+    runtime: provided
+    environment:
+        APP_STORAGE: '/tmp'
+
+plugins:
+    - ./vendor/bref/bref
+
+functions:
+    hello:
+        handler: hello.php
+        description: ''
+        layers:
+            - ${bref:layer.php-73}
+
+    helloHttp:
+        handler: hello.php
+        description: ''
+        layers:
+            - ${bref:layer.php-73-fpm}
+        events:
+            - http: 'ANY /'
+            - http: 'ANY {proxy+}'
+
+    artisan:
+        handler: artisan
+        timeout: 30 # in seconds
+        layers:
+            - ${bref:layer.php-73} # PHP
+            - ${bref:layer.console} # The "console" layer
+
+# Exclude files from deployment
+package:
+    exclude:
+        - 'tests/**'

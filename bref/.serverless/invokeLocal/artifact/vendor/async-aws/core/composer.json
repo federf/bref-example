@@ -1,0 +1,31 @@
+{
+    "name": "async-aws/core",
+    "type": "library",
+    "description": "Async AWS core package with common classes and interfaces.",
+    "license": "MIT",
+    "require": {
+        "php": "^7.2.5",
+        "ext-SimpleXML": "*",
+        "ext-hash": "*",
+        "ext-json": "*",
+        "psr/log": "~1.0",
+        "symfony/http-client": "^4.4 || ^5.0",
+        "symfony/http-client-contracts": "^1.0 || ^2.0",
+        "symfony/service-contracts": "^1.0 || ^2.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.3-dev"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "AsyncAws\\Core\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AsyncAws\\Core\\Tests\\": "tests/"
+        }
+    }
+}
