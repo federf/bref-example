@@ -22,21 +22,21 @@ make key
 
 Luego conectarse por el browser a:
 
-- http://localhost:8484/
+- http://localhost:8282/
 
 ## Conexión a base de datos
 
 Para conectarse al motor de base de datos utilizando MySQL deben utilizar los siguiente parámetros:
 
 - Host: 127.0.0.1
-- Port: 3310
+- Port: 3313
 - Username: homestead
 - Password: secret
 
 Para conectarse con el usuario root:
 
 - Host: 127.0.0.1
-- Port: 3310
+- Port: 3313
 - Username: root
 - Password: root
 
